@@ -1,4 +1,4 @@
-apply from: "$project.rootDir/dependencies.gradle"
+apply from: "$project.rootDir/build_config/dependencies.gradle"
 
 def isBuildFilesPresent = { module ->
     def buildGradleFiles = module.listFiles(new FilenameFilter() {
