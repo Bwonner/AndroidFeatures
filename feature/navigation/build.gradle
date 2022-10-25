@@ -1,0 +1,19 @@
+apply from: "$project.rootDir/build_config/dependencies.gradle"
+
+dependencies {
+
+    //Kotlin
+    implementation(kotlin)
+
+    //AndroidX
+    implementation androidX.values()
+
+    //Constraint
+    implementation(constraint)
+
+    //Material
+    implementation(material)
+
+    //Navigation
+    implementation navigation.values()
+}
