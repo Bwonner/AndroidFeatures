@@ -21,11 +21,14 @@ dependencies {
             implementation project(":data:${dataModule.name}")
         }
     }
-    file("$project.rootDir/features").listFiles().each { featuresModule ->
+    file("$project.rootDir/feature").listFiles().each { featuresModule ->
         if (featuresModule.isDirectory() && isBuildFilesPresent(featuresModule)) {
-            implementation project(":features:${featuresModule.name}")
+            implementation project(":feature:${featuresModule.name}")
         }
     }
+
+    //Kotlin
+    implementation(kotlin)
 
     //AndroidX
     implementation androidX.values()
@@ -38,5 +41,8 @@ dependencies {
 
     //Tests
     implementation junit.values()
-    implementation (ui_tests)
+    implementation(ui_tests)
+
+    //Navigation
+    implementation navigation.values()
 }
