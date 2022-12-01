@@ -16,4 +16,10 @@ dependencies {
 
     //Navigation
     implementation navigation.values()
+
+    //Dagger2
+    implementation dagger2.values()
+
+    //Dagger2 kapt
+    kapt dagger2_kapt.values()
 }
