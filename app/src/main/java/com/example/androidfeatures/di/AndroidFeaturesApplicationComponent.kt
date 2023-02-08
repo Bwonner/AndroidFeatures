@@ -4,16 +4,13 @@ import android.app.Application
 import android.content.Context
 import androidx.navigation.NavController
 import com.example.androidfeatures.MainActivity
-import com.example.navigation.NavigationDependencies
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [AndroidFeaturesApplicationModule::class])
-interface AndroidFeaturesApplicationComponent : NavigationDependencies {
-
-    override val navController: NavController
+interface AndroidFeaturesApplicationComponent {
 
     fun inject(application: Application)
     fun inject(activity: MainActivity)

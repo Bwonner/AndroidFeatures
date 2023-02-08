@@ -1,10 +1,8 @@
 package com.example.androidfeatures.di
 
 import android.app.Application
-import com.example.navigation.NavigationDependencies
-import com.example.navigation.NavigationDepsProvider
 
-class AndroidFeaturesApplication : Application(), NavigationDepsProvider {
+class AndroidFeaturesApplication : Application() {
 
     private val androidFeaturesApplicationComponent: AndroidFeaturesApplicationComponent by lazy {
         AndroidFeaturesApplicationComponent(this)
@@ -15,6 +13,4 @@ class AndroidFeaturesApplication : Application(), NavigationDepsProvider {
 
         androidFeaturesApplicationComponent.inject(this)
     }
-
-    override val deps: NavigationDependencies = androidFeaturesApplicationComponent
 }
