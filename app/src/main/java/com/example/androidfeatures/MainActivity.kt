@@ -6,7 +6,6 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.navigation.NavigationFlow
 import com.example.navigation.Navigator
 import com.example.navigation.ToFlowNavigatable
-import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), ToFlowNavigatable {
 

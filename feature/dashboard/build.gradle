@@ -1,7 +1,7 @@
 apply from: "$project.rootDir/build_config/dependencies.gradle"
 
 dependencies {
-    implementation project(":feature:navigation")
+    implementation project(":core:navigation")
 
     //Kotlin
     implementation(kotlin)
