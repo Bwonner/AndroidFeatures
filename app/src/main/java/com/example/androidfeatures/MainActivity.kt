@@ -3,6 +3,7 @@ package com.example.androidfeatures
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
+import com.example.androidfeatures.databinding.ActivityMainBinding
 import com.example.androidfeatures.di.DaggerMainActivityComponent
 import com.example.common.di.InjectUtils
 import com.example.navigation.NavigationFlow
@@ -15,9 +16,12 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable {
     @Inject
     lateinit var navigator: Navigator
 
+    private var binding: ActivityMainBinding? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding?.root)
 
         DaggerMainActivityComponent
             .builder()
@@ -34,5 +38,10 @@ class MainActivity : AppCompatActivity(), ToFlowNavigatable {
 
     override fun navigateToFlow(flow: NavigationFlow) {
         navigator.navigateToFlow(flow)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
     }
 }
