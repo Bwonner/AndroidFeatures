@@ -1,16 +1,9 @@
-apply from: "$project.rootDir/build_config/dependencies.gradle"
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+}
 
-dependencies {
-
-    //Kotlin
-    implementation(kotlin)
-
-    //AndroidX
-    implementation androidX.values()
-
-    //Constraint
-    implementation(constraint)
-
-    //Material
-    implementation(material)
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
 }

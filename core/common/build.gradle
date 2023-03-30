@@ -1,0 +1,13 @@
+apply from: "$project.rootDir/build_config/dependencies.gradle"
+
+dependencies {
+
+    implementation project(":core:utils")
+
+    //Kotlin
+    implementation(kotlin)
+
+    //Dagger2 kapt
+    kapt(dagger2_kapt)
+    implementation(dagger2)
+}
