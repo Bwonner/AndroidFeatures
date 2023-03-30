@@ -1,9 +1,13 @@
 apply from: "$project.rootDir/build_config/dependencies.gradle"
 
 dependencies {
+
+    implementation project(":core:utils")
+
     //Kotlin
     implementation(kotlin)
 
-    //AndroidX
-    implementation androidX.values()
+    //Dagger2 kapt
+    kapt(dagger2_kapt)
+    implementation(dagger2)
 }

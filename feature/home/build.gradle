@@ -2,6 +2,7 @@ apply from: "$project.rootDir/build_config/dependencies.gradle"
 
 dependencies {
     implementation project(":core:navigation")
+    implementation project(":core:common")
 
     //Kotlin
     implementation(kotlin)
@@ -17,4 +18,8 @@ dependencies {
 
     //Navigation
     implementation navigation.values()
+
+    //Dagger2 kapt
+    kapt(dagger2_kapt)
+    implementation(dagger2)
 }
