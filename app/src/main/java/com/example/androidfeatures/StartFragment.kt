@@ -8,18 +8,18 @@ import androidx.fragment.app.Fragment
 import com.example.androidfeatures.databinding.FragmentStartBinding
 import com.example.navigation.NavigationFlow
 import com.example.navigation.ToFlowNavigatable
+import com.example.utils.viewBinding
 
 class StartFragment : Fragment() {
 
-    private var binding: FragmentStartBinding? = null
+    private val binding by viewBinding { FragmentStartBinding.inflate(layoutInflater) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentStartBinding.inflate(inflater, container, false)
-        return binding?.root
+    ): View {
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,10 +37,5 @@ class StartFragment : Fragment() {
                 )
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
     }
 }

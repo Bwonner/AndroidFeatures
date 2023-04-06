@@ -9,32 +9,27 @@ import androidx.navigation.fragment.findNavController
 import com.example.home.databinding.FragmentNextBinding
 import com.example.navigation.DeepLinkDestination
 import com.example.navigation.deepLinkNavigateTo
+import com.example.utils.viewBinding
 
 class NextFragment : Fragment() {
 
-    private var binding: FragmentNextBinding? = null
+    private val binding by viewBinding { FragmentNextBinding.inflate(layoutInflater) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentNextBinding.inflate(inflater, container, false)
-        return binding?.root
+    ): View {
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.toDashboardFlowDeepLink?.setOnClickListener {
+        binding.toDashboardFlowDeepLink.setOnClickListener {
             it.post {
                 findNavController().deepLinkNavigateTo(DeepLinkDestination.Dashboard("From next fragment deeplink"))
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
     }
 }
