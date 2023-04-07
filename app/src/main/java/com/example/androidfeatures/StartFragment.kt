@@ -5,17 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.androidfeatures.databinding.FragmentStartBinding
 import com.example.navigation.NavigationFlow
 import com.example.navigation.ToFlowNavigatable
+import com.example.utils.viewBinding
 
 class StartFragment : Fragment() {
+
+    private val binding by viewBinding { FragmentStartBinding.inflate(layoutInflater) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_start, container, false)
+    ): View {
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

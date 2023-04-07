@@ -28,10 +28,13 @@ ext {
             }
         }
 
+        buildFeatures {
+            viewBinding = true
+        }
+
         packagingOptions {
             exclude 'META-INF/**'
         }
-
 
         testOptions {
             unitTests.all {
