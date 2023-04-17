@@ -1,26 +1,16 @@
 package com.example.androidfeatures
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.example.androidfeatures.databinding.FragmentStartBinding
 import com.example.navigation.NavigationFlow
 import com.example.navigation.ToFlowNavigatable
 import com.example.utils.viewBinding
+import ui.BaseFragment
 
-class StartFragment : Fragment() {
+class StartFragment : BaseFragment(contentLayoutId = R.layout.fragment_start) {
 
-    private val binding by viewBinding { FragmentStartBinding.inflate(layoutInflater) }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return binding.root
-    }
+    private val binding by viewBinding { FragmentStartBinding.bind(requireView()) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

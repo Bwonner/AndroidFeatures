@@ -1,28 +1,18 @@
 package com.example.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.home.databinding.FragmentHomeBinding
 import com.example.home.di.DaggerHomeComponent
 import com.example.navigation.NavigationFlow
 import com.example.navigation.ToFlowNavigatable
 import com.example.utils.viewBinding
+import ui.BaseFragment
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment(contentLayoutId = R.layout.fragment_home) {
 
-    private val binding by viewBinding { FragmentHomeBinding.inflate(layoutInflater) }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return binding.root
-    }
+    private val binding by viewBinding { FragmentHomeBinding.bind(requireView()) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
