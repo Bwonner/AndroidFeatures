@@ -7,7 +7,7 @@ import androidx.annotation.PluralsRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 
-class ResourceProvider (private val context: Context) {
+class ResourceProvider(private val context: Context) {
     fun getString(@StringRes id: Int) = context.getString(id)
 
     fun getString(@StringRes id: Int, vararg formatArgs: Any?) =
