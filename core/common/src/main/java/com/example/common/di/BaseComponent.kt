@@ -29,10 +29,10 @@ interface BaseComponentProvider {
 }
 
 object InjectUtils {
-    fun provideBaseComponent(applicationContext: Context): BaseComponent =
-        if (applicationContext is BaseComponentProvider) {
-            (applicationContext as BaseComponentProvider).provideBaseComponent()
-        } else {
-            throw IllegalStateException("Provide the application context which implement BaseComponentProvider")
+    fun provideBaseComponent(applicationContext: Context): BaseComponent {
+        check(applicationContext is BaseComponentProvider) {
+            "Provide the application context which implement BaseComponentProvider"
         }
+        return applicationContext.provideBaseComponent()
+    }
 }
