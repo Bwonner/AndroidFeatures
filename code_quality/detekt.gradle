@@ -26,6 +26,7 @@ task detekt(type: JavaExec, group: "code_quality") {
             '-ex', exclude,
             '-r', report,
             '-b', baselineFile,
-            '--parallel'
+            '--parallel',
+            '-ac'
     ]
 }
