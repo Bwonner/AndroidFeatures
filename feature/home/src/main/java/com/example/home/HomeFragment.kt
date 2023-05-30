@@ -3,12 +3,12 @@ package com.example.home
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
+import com.example.common.ui.BaseFragment
 import com.example.home.databinding.FragmentHomeBinding
 import com.example.home.di.DaggerHomeComponent
 import com.example.navigation.NavigationFlow
 import com.example.navigation.ToFlowNavigatable
 import com.example.utils.viewBinding
-import ui.BaseFragment
 
 class HomeFragment : BaseFragment(contentLayoutId = R.layout.fragment_home) {
 

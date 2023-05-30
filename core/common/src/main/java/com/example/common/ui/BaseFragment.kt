@@ -1,4 +1,4 @@
-package ui
+package com.example.common.ui
 
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment

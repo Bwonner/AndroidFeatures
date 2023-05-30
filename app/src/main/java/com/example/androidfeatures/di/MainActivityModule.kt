@@ -5,8 +5,10 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class MainActivityModule {
+interface MainActivityModule {
 
-    @Provides
-    fun provideNavigator(): Navigator = Navigator()
+    companion object {
+        @Provides
+        fun provideNavigator(): Navigator = Navigator()
+    }
 }

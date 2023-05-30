@@ -2,6 +2,7 @@ package com.example.common.di
 
 import android.app.Application
 import android.content.Context
+import com.example.common.ViewModelProviderFactory
 import com.example.utils.ResourceProvider
 import dagger.BindsInstance
 import dagger.Component
@@ -10,6 +11,7 @@ import dagger.Component
 interface BaseComponent {
 
     fun getResourceProvider(): ResourceProvider
+    fun getViewModelProviderFactory(): ViewModelProviderFactory
 
     fun inject(app: Application)
 
