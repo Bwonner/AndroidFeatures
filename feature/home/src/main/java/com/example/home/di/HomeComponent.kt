@@ -3,7 +3,6 @@ package com.example.home.di
 import com.example.home.HomeFragment
 import dagger.Component
 
-@HomeScope
 @Component(modules = [HomeModule::class])
 interface HomeComponent {
 
