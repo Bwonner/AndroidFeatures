@@ -1,6 +1,7 @@
 package com.example.navigation
 
 import androidx.core.net.toUri
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.NavOptions
@@ -12,7 +13,7 @@ fun buildDeepLink(destination: DeepLinkDestination) =
 
 fun NavController.deepLinkNavigateTo(
     deepLinkDestination: DeepLinkDestination,
-    popUpTo: Boolean = false
+    popUpTo: Boolean = false,
 ) {
     val builder = NavOptions.Builder()
 
@@ -30,3 +31,6 @@ sealed class DeepLinkDestination(val address: String) {
     class Dashboard(msg: String) : DeepLinkDestination("example://dashboard/exampleArgs?msg=$msg")
     object Next : DeepLinkDestination("example://next")
 }
+
+fun Fragment.navigateToFlow(navigationFlow: NavigationFlow) =
+    (requireActivity() as ToFlowNavigatable).navigateToFlow(navigationFlow)

@@ -6,8 +6,11 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.PluralsRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
+import javax.inject.Inject
 
-class ResourceProvider(private val context: Context) {
+class ResourceProvider @Inject constructor(
+    private val context: Context,
+) {
     fun getString(@StringRes id: Int) = context.getString(id)
 
     fun getString(@StringRes id: Int, vararg formatArgs: Any?) =

@@ -7,7 +7,7 @@ import com.example.common.ui.BaseFragment
 import com.example.home.databinding.FragmentHomeBinding
 import com.example.home.di.DaggerHomeComponent
 import com.example.navigation.NavigationFlow
-import com.example.navigation.ToFlowNavigatable
+import com.example.navigation.navigateToFlow
 import com.example.utils.viewBinding
 
 class HomeFragment : BaseFragment(contentLayoutId = R.layout.fragment_home) {
@@ -27,7 +27,7 @@ class HomeFragment : BaseFragment(contentLayoutId = R.layout.fragment_home) {
         }
 
         binding.toDashboardFlow.setOnClickListener {
-            (requireActivity() as ToFlowNavigatable).navigateToFlow(NavigationFlow.DashboardFlow("From home fragment"))
+            navigateToFlow(NavigationFlow.DashboardFlow("From home fragment"))
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.example.dashboard
 
-import com.example.common.BaseViewModel
+import com.example.common.viewmodel.BaseViewModel
 import com.example.utils.ResourceProvider
 import javax.inject.Inject
 

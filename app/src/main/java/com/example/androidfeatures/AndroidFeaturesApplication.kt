@@ -1,23 +1,24 @@
 package com.example.androidfeatures
 
 import android.app.Application
-import com.example.common.di.BaseComponent
-import com.example.common.di.BaseComponentProvider
-import com.example.common.di.DaggerBaseComponent
+import com.example.androidfeatures.di.AppComponent
+import com.example.androidfeatures.di.DaggerAppComponent
+import com.example.common.di.AppComponentProvider
 
-class AndroidFeaturesApplication : Application(), BaseComponentProvider {
+class AndroidFeaturesApplication : Application(), AppComponentProvider {
 
-    lateinit var baseComponent: BaseComponent
+    private lateinit var appComponent: AppComponent
 
     override fun onCreate() {
         super.onCreate()
 
-        baseComponent = DaggerBaseComponent
+        DaggerAppComponent
             .builder()
             .context(this)
             .build()
-        baseComponent.inject(this)
+            .apply { inject(this@AndroidFeaturesApplication) }
+            .also { appComponent = it }
     }
 
-    override fun provideBaseComponent(): BaseComponent = baseComponent
+    override fun provideAppComponent(): AppComponent = appComponent
 }
